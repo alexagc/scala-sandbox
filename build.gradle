@@ -44,7 +44,9 @@ task sendCoverageToCodacy(type: JavaExec) {
             "-l",
             "Java",
             "-r",
-            "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
+            "${buildDir}/reports/jacoco/test/jacocoTestReport.xml",
+            "--projectToken",
+            "d1fc8ab746d64890abcba26fa565f0bd"
     ]
 }
 
