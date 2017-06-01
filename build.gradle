@@ -10,6 +10,8 @@
 // Apply the scala plugin to add support for Scala
 apply plugin: 'scala'
 apply plugin: 'war'
+apply plugin: 'jacoco'
+apply plugin: 'jetty'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -17,6 +19,21 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
+
+// Define Jacoco tasks
+jacoco {
+    toolVersion = '0.7.6.201602180812'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacoco/jacocoHtml"
+    }
+}
+
+test.finalizedBy(jacocoTestReport)
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
