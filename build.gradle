@@ -24,6 +24,8 @@ dependencies {
     compile 'org.scala-lang:scala-library:2.11.8'
     // Add scalatra dependency
     compile 'org.scalatra:scalatra_2.10:2.3.1'
+    // Add serlet dependency
+    compile group: 'javax.servlet', name: 'servlet-api', version:'2.4'
 
     // We use Scalatest for testing our library
     testCompile 'junit:junit:4.12'
