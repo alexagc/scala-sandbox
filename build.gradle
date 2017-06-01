@@ -9,6 +9,7 @@
 
 // Apply the scala plugin to add support for Scala
 apply plugin: 'scala'
+apply plugin: 'war'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -21,6 +22,8 @@ repositories {
 dependencies {
     // We use Scala 2.11 in our library project
     compile 'org.scala-lang:scala-library:2.11.8'
+    // Add scalatra dependency
+    compile 'org.scalatra:scalatra_2.10:2.3.1'
 
     // We use Scalatest for testing our library
     testCompile 'junit:junit:4.12'
